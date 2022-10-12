@@ -21,7 +21,7 @@ I made this as a project for a university course, and, as such, it is nothing mo
 ----------------
   
   The Show_Graph function is a made in such a way that no matter the amount of values it takes into consideration for the graph and no matter the values themselves, the graph will never go out of bounds. The values used are normalized to a range from 0.1 to 0.9 and, to determine the length of the bars of the graph I divide 1.9 by the number of values. Since from one corner to the other of the window ( if we are talking in terms of float coordinates ) we have a length of 2 ( from -1 to 1 ) – I am using 1.9 and not 2 since, when I used 2, for some reason the graph would go out of bounds horizontally - The display of bars starts from -0.95 and stops somewhere around 0.9, for the reason mentioned above ( dividing 1.9 and not 2 by the number of values ).
-  
+  This functionality was not an intention of mine but it was necessary for my grade :).
   
   
   Sorry for the weird formatting, this is one of my first repos.
