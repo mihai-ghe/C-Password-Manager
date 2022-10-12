@@ -123,22 +123,16 @@
 
 	    while (1) {
 
-	        // Read data in blocks until EOF. Update the ciphering with each read.
-
 	        int numRead = fread(read_buf, sizeof(unsigned char), BUFSIZE, ifp);
 	        EVP_CipherUpdate(ctx, cipher_buf, &out_len, read_buf, numRead);
 	        fwrite(cipher_buf, sizeof(unsigned char), out_len, ofp);
-	        if (numRead < BUFSIZE) { // EOF
+	        if (numRead < BUFSIZE) { 
 	            break;
 	        }
 	    }
 
-	    // Now cipher the final block and write it out.
-
 	    EVP_CipherFinal(ctx, cipher_buf, &out_len);
 	    fwrite(cipher_buf, sizeof(unsigned char), out_len, ofp);
-
-	    // Free memory
 
 	    free(cipher_buf);
 	    free(read_buf);
